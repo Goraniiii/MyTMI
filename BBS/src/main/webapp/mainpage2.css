@@ -1,0 +1,464 @@
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 100;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.otf) format('opentype');}
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 300;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.otf) format('opentype');}
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 400;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf) format('opentype');}
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 500;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf) format('opentype');}
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 700;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.otf) format('opentype');}
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 900;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.otf) format('opentype');}
+
+/********************************************************/
+html{
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+.swiper-container {
+	width: 100%;
+	height: 100%;
+}
+
+.bookImage {
+	width:153px;
+	height:221px;
+	-webkit-transform:scale(1);
+    -moz-transform:scale(1);
+    -ms-transform:scale(1); 
+    -o-transform:scale(1);  
+    transform:scale(1);
+    -webkit-transition:.3s;
+    -moz-transition:.3s;
+    -ms-transition:.3s;
+    -o-transition:.3s;
+    transition:.3s;
+}
+
+.bookImage:hover {
+	-webkit-transform:scale(1.1);
+    -moz-transform:scale(1.1);
+    -ms-transform:scale(1.1);   
+    -o-transform:scale(1.1);
+    transform:scale(1.1);
+}
+
+/* 색깔있는 굵은 줄 (구분선) */
+hr{ 
+	border :1px solid #f77;
+}
+
+
+/***************************************************************************************************************************/
+body{
+	margin: 0px;
+}
+
+.totalContainer{
+	margin: 0px 0px 50px 0px;
+	font-family: 'Noto Sans KR', sans-serif;
+	display: flex; 
+	justify-content: center;
+	align-items: center;
+}
+
+#mainPageHeader{
+	background: white; 
+	position: fixed; 
+	width: 100%; 
+	box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 0px 0px;
+	z-index: 100; 
+	top: 0; 
+	left: 0;
+}
+
+button:focus {
+	outline: none;
+}
+
+a:link {
+	text-decoration: none;
+}
+
+a:visited {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* 헤더 전체를 감싸는 컨테이너 */
+.headerContainer{
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	margin: 0px 108px;
+	
+}
+
+/* 마이페이지 버튼 */
+#mypage{
+	display: none;
+	height:30px;
+	width:130px;
+	border:1.5px solid #f77;
+	background:white;
+	color:#f77;
+	margin-right:10px;
+	margin-bottom:-10px;
+	margin-left:10px;
+	float:left;
+}
+
+.logoContainer{
+	margin: 0px auto;
+}
+
+/* 로고의 사이즈 조절 */
+#logo{
+	width: auto;
+	height: 90px;
+}
+
+.searchContainer{
+	width: 300px;
+    height: 62px;
+    display: flex;
+    align-items: center;
+  	margin: 0px 0px 0px 24px;
+}
+
+.searchLabel{
+    background: url("image/search.svg") 9px 9px no-repeat rgb(245, 245, 247);
+    display: flex;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    height: 38px;
+    padding: 7px 10px 8px 36px;
+    border-radius: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.searchBox{
+	flex: 1 1 0%;
+	height: 28px;
+}
+
+/* search 칸 모양 */
+.inputSearch{
+	font-family: 'Noto Sans KR', sans-serif;
+	letter-spacing: -0.3px;
+	padding: 0px 0px 1px;
+    border: 0px;
+    background: transparent;
+    font-size: 14px;
+    font-weight: 400;
+    width: 100%;
+}
+
+/* search에 입력시 나오는 테두리 삭제 */
+.inputSearch:focus{
+	outline: none;
+}
+
+/* 헤더에 있는 로그인 버튼 컨테이너  */
+.LoginButtonContainer{
+	display: flex;
+	align-items: center;
+	margin: 0px 0px 0px 24px;
+	height: 62px;
+}
+
+/* 헤더에 있는 로그인 버튼  */
+#login{
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 14px;
+	cursor: pointer;
+	background: transparent;
+	color: rgb(116, 116, 123);
+	margin: 15px 0px;
+	padding: 0px;
+	border: 0px;
+}
+
+/*로그아웃버튼*/
+#logout{
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 14px;
+	font-weight: 500;
+	cursor: pointer;
+	background: transparent;
+	color: rgb(53, 53, 53);
+	margin: 0px 0px 0px 20px;
+	padding: 5px 14px 6px;
+	border: 1px solid rgba(116, 116, 123, 0.5);
+	border-radius: 6px;
+}
+
+/* 헤더에 있는 회원가입 버튼 컨테이너  */
+.signUpButtonContainer{
+	display: flex;
+	align-items: center;
+	margin: 0px 0px 0px 24px;
+	height: 62px;
+}
+
+/* 헤더에 있는 회원가입 버튼  */
+#signUp{
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 14px;
+	font-weight: 500;
+	cursor: pointer;
+	background: transparent;
+	color: rgb(53, 53, 53);
+	margin: 15px 0px;
+	padding: 5px 14px 6px;
+	border: 1px solid rgba(116, 116, 123, 0.5);
+	border-radius: 6px;
+}
+
+.sectionContainer{
+	margin-bottom: 42px;
+}
+
+.listTitleContainer{
+	margin: 0px 60px;
+	padding: 12px 0 14px;
+	max-height: 30px;
+	max-width: 1320px;
+}
+
+.listTitle{
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 22px;
+	font-weight: 700;
+	letter-spacing: -0.4px;
+	color: #292A32;
+	margin: 0px;
+	
+}
+
+.swiper-container {
+	width: 100%;
+	height: 100%;
+}
+
+.swiper-slide {
+	display: flex;
+	max-width: 100%;
+}
+
+:root {
+	--swiper-theme-color: #FFB7B7 !important;
+}
+
+.bookListContainer{
+	margin: 0px 40px 0px 60px;
+	max-width: 1320px;
+}
+
+.bookContainer{
+	
+}
+
+.bookDetailLink{
+	width: auto;
+}
+
+.bookImage{
+	box-sizing: border-box;
+	height: 100%;
+	width: 100%;
+}
+
+.book{
+	height: 365px;
+	border-radius: 5px;
+	border: 1px solid #EAE9E8;
+	background: #F8F8F8;
+	overflow: hidden;
+}
+
+.bookTitle{
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	font-size: 16px;
+	font-weight: 500;
+	letter-spacing: -0.3px;
+	color:#292a32;
+	width: 251px;
+}
+/* 여기까지 메인 페이지 헤더, 책 리스트 css */
+
+/***************************************************************/
+button:focus {border: none; outline: none;}
+
+input:focus{border: none; outline: none;}
+
+.disableBodyScrolling {
+    overflow: hidden !important;
+}
+
+#backScreen{
+	display: none;
+	position: fixed;
+	margin: 0px;
+	background: rgba(0, 0, 0, 0.56);
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	z-index: 100;
+
+}
+
+.modalScreen{
+	display: none;
+	position: fixed;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	z-index: 101;
+	text-align: center;
+}
+
+.loginContainer{
+	width: 375px;
+	height: auto;
+	padding: 20px 0px;
+	z-index: 102;
+	background: rgb(255, 255, 255);
+	box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 6px 0px;
+	border-radius: 6px;
+}
+
+.innerLoginBox{
+	padding: 32px 0px 20px;
+}
+
+.loginLogoBox{
+	width: 40%;
+	height: 10%;
+
+}
+
+.loginDataBox{
+	margin: 0 20px;
+}
+
+.userDataContainer{
+	display: flex;
+	align-items: center;
+	height: 44px;
+	padding: 0px 12px;
+	margin: 8px 0px;
+	border-radius: 6px;
+	background: rgb(245, 245, 245);
+}
+
+.userInput{
+	background: transparent;
+	border: 0px;
+}
+
+.loginButton{
+	background: #FFB7B7;
+	border: none;
+	border-radius: 6px;
+	color: white;
+	width: 100%;
+	height: 44px;
+	margin: 10px 0px 0px;
+	cursor: pointer;
+}
+
+.smallSignUpButton{
+	background: none;
+	border: 0px;
+	color: salmon;
+	cursor: pointer;
+	margin: 20px 0px 14px;
+}
+
+.smallSignInButton{
+	background: none;
+	border: 0px;
+	color: salmon;
+	cursor: pointer;
+	margin: 20px 0px 14px;
+}
+
+.orLine{
+	position: relative;
+	text-align: center;
+	border: 0px;
+	height: 1.5em;
+	margin: 30px 0px;
+}
+
+.orLine::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 0px;
+	width: 100%;
+	border-top: 1px solid rgb(216, 216, 216);
+}
+
+.orLine::after {
+	content: "OR";
+	display: inline;
+	position: relative;
+	background-color: white;
+	color: rgb(160, 160, 160);
+	padding: 0px 14px;
+	
+}
+
+.signUpButton{
+	background: #FFB7B7;
+	border: none;
+	border-radius: 6px;
+	color: white;
+	width: 100%;
+	height: 44px;
+	margin: 10px 0px 0px;
+	cursor: pointer;
+}
+
+/* 로그인 회원가입 창 css */
+
+
+/* 푸터 */
+footer{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: #1c1d1f;
+}
+
+.siteInfoConatiner{
+	color: #a5a5a7;
+	font-size: 13px;
+	font-weight: 400;
+	letter-spacing: -0.3px;
+	line-height: 22px;
+	position: relative;
+	right: 580px;
+}
+
+.makerInfoConatiner{
+	color: #848485;
+	font-size: 13px;
+	font-weight: 400;
+	letter-spacing: -0.3px;
+	line-height: 22px;
+	position: relative;
+	right: 580px;
+	margin-top: 13px;
+}
