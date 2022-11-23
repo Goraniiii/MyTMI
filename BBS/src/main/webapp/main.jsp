@@ -91,8 +91,6 @@
 			</a>
 		</div>
 		
-		
-		</div>
 		<!-- footer -->
 		<footer>
 	      <div style="padding: 20px 0 38px">
@@ -105,13 +103,9 @@
 	          </div>
 	       </div>
 		</footer>
-	
+		</div>
+		
 	</div>
-	
-	
-		
-		
-		
 	
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="js/bootstrap.js"></script>
