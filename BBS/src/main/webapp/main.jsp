@@ -5,9 +5,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <!-- <meta name="viewport" content="width=device-width", initial-scale="1">
 
 <link rel="stylesheet" href="css/custom.css"> -->
+
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/mainpage2.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
@@ -15,7 +17,7 @@
 <title>MyTmi</title>
 </head>
 <body>
-	
+	<div class="wrapper">
 		<!-- 헤더 -->
 		<header id="mainPageHeader">
       <nav class="headerContainer">
@@ -59,9 +61,9 @@
            	 %>
            </div>
       </nav>
-   </header>
-		
-		
+    </header>
+   
+   
 	<div class="container">
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
 			<ol class="carousel-indicators">
@@ -89,18 +91,28 @@
 			</a>
 		</div>
 		
+		
+		</div>
+		<!-- footer -->
 		<footer>
 	      <div style="padding: 20px 0 38px">
 	          <div class="siteInfoConatiner">
 	              동국대학교<br>웹프로그래밍 
 	          </div>
 	          <div class="makerInfoConatiner">
-	              임치현 | 김민환 | 이수연 | 박고운 | 박고운  <br>
+	              임치현 | 김민환 | 이수연 | 박고운 <br>
 	              © 2022 MyTMI. project
 	          </div>
 	       </div>
 		</footer>
+	
 	</div>
+	
+	
+		
+		
+		
+	
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="js/bootstrap.js"></script>
 	
