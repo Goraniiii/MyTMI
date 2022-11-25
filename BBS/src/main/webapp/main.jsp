@@ -13,7 +13,7 @@
 
 
 <link rel="stylesheet" href="css/bootstrap.css">
-<link rel="stylesheet" href="css/mainpage2 (2).css">
+<link rel="stylesheet" href="css/mainpage2.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
 
 <title>MyTmi</title>

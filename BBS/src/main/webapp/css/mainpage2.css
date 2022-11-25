@@ -24,7 +24,8 @@ body{
 	justify-content: center;
 }
 .carousel-inner{
-	height : 300px;
+	height : 500px;
+	overflow: hidden;
 }
 .carousel-indicators{
 	color : red;
@@ -41,14 +42,14 @@ body{
 
 #myCarousel{
 	margin-top:100px;
-	padding-bottom: 170px;
+/*	padding-bottom: 170px;	*/
 	width: 1000px;
 	height: 500px;
 	
 	width: 100%;
 	text-align: center;
 	
-	overflow: hidden;
+	
 }
 
 #test{
@@ -304,8 +305,6 @@ footer{
 
 .wrapper {
 	margin: 0 auto;
-	display: flex;
-	align-items: center;
 }
 
 /*테스트*/
