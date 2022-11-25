@@ -10,6 +10,41 @@ html{
 	font-family: 'Noto Sans KR', sans-serif;
 }
 
+.swiper-container {
+	width: 100%;
+	height: 100%;
+}
+
+.bookImage {
+	width:153px;
+	height:221px;
+	-webkit-transform:scale(1);
+    -moz-transform:scale(1);
+    -ms-transform:scale(1); 
+    -o-transform:scale(1);  
+    transform:scale(1);
+    -webkit-transition:.3s;
+    -moz-transition:.3s;
+    -ms-transition:.3s;
+    -o-transition:.3s;
+    transition:.3s;
+}
+
+.bookImage:hover {
+	-webkit-transform:scale(1.1);
+    -moz-transform:scale(1.1);
+    -ms-transform:scale(1.1);   
+    -o-transform:scale(1.1);
+    transform:scale(1.1);
+}
+
+/* 색깔있는 굵은 줄 (구분선) */
+hr{ 
+	border :1px solid #f77;
+}
+
+
+/***************************************************************************************************************************/
 html,
 body{
 	margin: 0;
@@ -19,29 +54,15 @@ body{
 .container{
 	min-height:100%;
 	position : relative;
-	
 	align-items: center;
 	justify-content: center;
+	
+	
 }
-.carousel-inner{
-	height : 300px;
-}
-.carousel-indicators{
-	color : red;
-	position: absolute;
-	bottom: 10px;
-	left: 50%;
-	z-index: 15;
-	width: 60%;
-	padding-left: 0;
-	margin-left: -30%;
-	text-align: center;
-	list-style: none;
-}
-
 #myCarousel{
 	margin-top:100px;
-	padding-bottom: 170px;
+	margin-bottom:10px;
+	padding-bottom: 200px;
 	width: 1000px;
 	height: 500px;
 	
@@ -51,10 +72,6 @@ body{
 	overflow: hidden;
 }
 
-#test{
-	background:red;
-	height:300px;
-}
 
 .totalContainer{
 	margin: 0px 0px 50px 0px;
@@ -73,6 +90,29 @@ body{
 	top: 0; 
 	left: 0;
 }
+
+button:focus {
+	outline: none;
+}
+
+a:link {
+	text-decoration: none;
+}
+
+a:visited {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.wrapper{
+	display: flex;
+	align-items: center;
+	
+}
+
 
 /* 헤더 전체를 감싸는 컨테이너 */
 .headerContainer{
@@ -104,7 +144,7 @@ body{
 /* 로고의 사이즈 조절 */
 #logo{
 	width: auto;
-	height: 50px;
+	height: 90px;
 }
 
 .searchContainer{
@@ -112,7 +152,6 @@ body{
     height: 62px;
     display: flex;
     align-items: center;
-    float : right;
   	margin: 0px 0px 0px 24px;
 }
 
@@ -208,9 +247,80 @@ body{
 
 .sectionContainer{
 	margin-bottom: 42px;
+	align-items: right;
 }
 
+.listTitleContainer{
+	margin: 0px 60px;
+	padding: 12px 0 14px;
+	max-height: 30px;
+	max-width: 1320px;
+}
 
+.listTitle{
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 22px;
+	font-weight: 700;
+	letter-spacing: -0.4px;
+	color: #292A32;
+	margin: 0px;
+	
+}
+
+.swiper-container {
+	width: 100%;
+	height: 100%;
+}
+
+.swiper-slide {
+	display: flex;
+	max-width: 100%;
+}
+
+:root {
+	--swiper-theme-color: #FFB7B7 !important;
+}
+
+.bookListContainer{
+	margin: 0px 40px 0px 60px;
+	max-width: 1320px;
+}
+
+.bookContainer{
+	
+}
+
+.bookDetailLink{
+	width: auto;
+}
+
+.bookImage{
+	box-sizing: border-box;
+	height: 100%;
+	width: 100%;
+}
+
+.book{
+	height: 365px;
+	border-radius: 5px;
+	border: 1px solid #EAE9E8;
+	background: #F8F8F8;
+	overflow: hidden;
+}
+
+.bookTitle{
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	font-size: 16px;
+	font-weight: 500;
+	letter-spacing: -0.3px;
+	color:#292a32;
+	width: 251px;
+}
+/* 여기까지 메인 페이지 헤더, 책 리스트 css */
+
+/***************************************************************/
 button:focus {border: none; outline: none;}
 
 input:focus{border: none; outline: none;}
@@ -231,6 +341,21 @@ input:focus{border: none; outline: none;}
 	bottom: 0px;
 	left: 0px;
 	z-index: 100;
+
+}
+
+.modalScreen{
+	display: none;
+	position: fixed;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	z-index: 101;
+	text-align: center;
 }
 
 .loginContainer{
@@ -243,6 +368,34 @@ input:focus{border: none; outline: none;}
 	border-radius: 6px;
 }
 
+.innerLoginBox{
+	padding: 32px 0px 20px;
+}
+
+.loginLogoBox{
+	width: 40%;
+	height: 10%;
+
+}
+
+.loginDataBox{
+	margin: 0 20px;
+}
+
+.userDataContainer{
+	display: flex;
+	align-items: center;
+	height: 44px;
+	padding: 0px 12px;
+	margin: 8px 0px;
+	border-radius: 6px;
+	background: rgb(245, 245, 245);
+}
+
+.userInput{
+	background: transparent;
+	border: 0px;
+}
 
 .loginButton{
 	background: #FFB7B7;
@@ -253,6 +406,49 @@ input:focus{border: none; outline: none;}
 	height: 44px;
 	margin: 10px 0px 0px;
 	cursor: pointer;
+}
+
+.smallSignUpButton{
+	background: none;
+	border: 0px;
+	color: salmon;
+	cursor: pointer;
+	margin: 20px 0px 14px;
+}
+
+.smallSignInButton{
+	background: none;
+	border: 0px;
+	color: salmon;
+	cursor: pointer;
+	margin: 20px 0px 14px;
+}
+
+.orLine{
+	position: relative;
+	text-align: center;
+	border: 0px;
+	height: 1.5em;
+	margin: 30px 0px;
+}
+
+.orLine::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 0px;
+	width: 100%;
+	border-top: 1px solid rgb(216, 216, 216);
+}
+
+.orLine::after {
+	content: "OR";
+	display: inline;
+	position: relative;
+	background-color: white;
+	color: rgb(160, 160, 160);
+	padding: 0px 14px;
+	
 }
 
 .signUpButton{
@@ -266,14 +462,16 @@ input:focus{border: none; outline: none;}
 	cursor: pointer;
 }
 
-
+/* 로그인 회원가입 창 css */
 
 
 /* 푸터 */
 footer{
+
 	background-color: #1c1d1f;
+	
     width: 100%;
-    height: 170px; /* footer의 높이 */
+    height: 200px; /* footer의 높이 */
     position: relative;  
     bottom: 0;
     left: 0;
@@ -302,110 +500,10 @@ footer{
 	margin-top: 13px;
 }
 
-.wrapper {
-	margin: 0 auto;
-	display: flex;
-	align-items: center;
-}
-
-/*테스트*/
-
-.wrapper .allGame {
-    clear: both;
-    position: relative;
-    width: 100%;
-    padding-left: 24px;
-    margin: 0 auto;
-    background-color: #f8f9fa;
-}
-
-.wrapper .allGame .game {
-    position: relative;
-    display: block;
-    width: 255px;
-    cursor: pointer;
-}
-
-.wrapper .allGame>ul li {
-    float: left;
-    display: block;
-    width: 255px;
-}
-
-.wrapper .allGame>ul:after {
-    content: "";
-    display: block;
-    clear: both
-}
-
-.wrapper .allGame .pc.cardView {
-    padding: 15px 0 40px
-}
-
-.wrapper .allGame .pc.cardView li {
-    height: 272px;
-    margin: 0 24px 60px 0
-}
-
-.wrapper .allGame .pc.cardView .gameName span {
-    display: block;
-    width: 262px;
-    padding-right: 24px;
-    height: 36px;
-    margin: 0 auto;
-    word-wrap: break-word
-}
-
-.wrapper .allGame .pc.cardView .game {
-    height: 272px;
-    background-color: #fff;
-    transition: all .15s linear;
-    cursor: pointer
-}
-
-.wrapper .allGame .cardView .none {
-    margin-top: 0!important;
-    height: 320px
-}
-
-.wrapper .allGame .pc.cardView .game:active, .wrapper .allGame .pc.cardView .game:hover {
-    box-shadow: 0 0 16px 0 rgba(0,0,0,.16);
-    transition: all .2s linear
-}
-
-.wrapper .allGame .pc.cardView .game:active .gameImg img, .wrapper .allGame .pc.cardView .game:hover .gameImg img {
-    transition: all .6s cubic-bezier(.23,1,.32,1);
-    transform: scale(1.1) translateZ(0)
-}
-.wrapper .allGame .pc.cardView .gameImg {
-    position: relative;
-    display: block;
-    width: 255px;
-    height: 170px;
-    overflow: hidden
-}
-
-.wrapper .allGame .pc.cardView .gameImg:after {
-    content: "";
-    display: block;
-    width: 255px;
-    height: 170px;
-    background-color: #000;
-    opacity: .1
-}
-
-.wrapper .allGame .pc.cardView .gameImg:after, .wrapper .allGame .pc.cardView .gameImg img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: all .15s cubic-bezier(.23,1,.32,1)
-}
-
-.wrapper .allGame .pc.cardView .gameImg img {
-    transform: scale(1) translateZ(0)
-}
-
 img{
 	width: 100%;
 	height: auto;
 }
+
+
+

@@ -1,0 +1,96 @@
+@charset "EUC-KR";
+
+
+.allGame {
+    clear: both;
+    position: relative;
+    width: 1328px;
+    padding-left: 24px;
+    margin: 0 auto
+}
+
+.allGame .game {
+    position: relative;
+    display: block;
+    width: 302px;
+    cursor: pointer
+}
+
+.allGame>ul li {
+    float: left;
+    display: block;
+    width: 302px
+}
+
+.allGame>ul:after {
+    content: "";
+    display: block;
+    clear: both
+}
+
+.allGame .pc.cardView {
+    padding: 15px 0 40px
+}
+
+.allGame .pc.cardView li {
+    height: 320px;
+    margin: 0 24px 60px 0
+}
+
+.allGame .pc.cardView .gameName span {
+    display: block;
+    width: 262px;
+    padding-right: 24px;
+    height: 36px;
+    margin: 0 auto;
+    word-wrap: break-word
+}
+
+.allGame .pc.cardView .game {
+    height: 320px;
+    background-color: #fff;
+    transition: all .15s linear;
+    cursor: pointer
+}
+
+.allGame .cardView .none {
+    margin-top: 0!important;
+    height: 320px
+}
+
+.allGame .pc.cardView .game:active,.allGame .pc.cardView .game:hover {
+    box-shadow: 0 0 16px 0 rgba(0,0,0,.16);
+    transition: all .2s linear
+}
+
+.allGame .pc.cardView .game:active .gameImg img,.allGame .pc.cardView .game:hover .gameImg img {
+    transition: all .6s cubic-bezier(.23,1,.32,1);
+    transform: scale(1.1) translateZ(0)
+}
+.allGame .pc.cardView .gameImg {
+    position: relative;
+    display: block;
+    width: 302px;
+    height: 200px;
+    overflow: hidden
+}
+
+.allGame .pc.cardView .gameImg:after {
+    content: "";
+    display: block;
+    width: 302px;
+    height: 200px;
+    background-color: #000;
+    opacity: .1
+}
+
+.allGame .pc.cardView .gameImg:after,.allGame .pc.cardView .gameImg img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all .15s cubic-bezier(.23,1,.32,1)
+}
+
+.allGame .pc.cardView .gameImg img {
+    transform: scale(1) translateZ(0)
+}

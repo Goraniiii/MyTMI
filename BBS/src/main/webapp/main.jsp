@@ -10,8 +10,10 @@
 
 <link rel="stylesheet" href="css/custom.css"> -->
 
+
+
 <link rel="stylesheet" href="css/bootstrap.css">
-<link rel="stylesheet" href="css/mainpage2.css">
+<link rel="stylesheet" href="css/mainpage2 (2).css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
 
 <title>MyTmi</title>
@@ -24,15 +26,7 @@
          <div class="logoContainer">
             <a href="main.jsp"><img id="logo" src="images/logo.png"></a>  
          </div>         
-         <div class="searchContainer">
-            <form action="search.jsp" style="width: 100%">
-                <label class="searchLabel">
-                    <div class="searchBox">
-                        <input class="inputSearch" name="searchisbn" type="search" placeholder="검색" autocomplete="off" value="">
-                    </div>
-                </label>
-            </form>
-          </div> 
+         
           
           <%-- 로그인 버튼을 로그아웃 버튼으로 바꾸기 --%>
 
@@ -65,6 +59,7 @@
    
    
 	<div class="container">
+		<!-- Carousel -->
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
 			<ol class="carousel-indicators">
 				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -91,6 +86,57 @@
 			</a>
 		</div>
 		
+		<div class="searchContainer">
+            <form action="search.jsp" style="width: 100%">
+                <label class="searchLabel">
+                    <div class="searchBox">
+                        <input class="inputSearch" name="searchisbn" type="search" placeholder="검색" autocomplete="off" value="">
+                    </div>
+                </label>
+            </form>
+          </div> 
+		
+		
+		<!-- gallery -->
+		<div class="allGame" id="allGame">
+				<ul class="pc cardView">
+					<li>
+						<div class ="game">
+							<span class ="gameImg">
+								<img src ="images/1.jpg" data-img="images/1.jpg"data-gif width="255" height="170">
+							</span>
+						</div>
+					</li>
+					
+					<li>
+						<div class ="game">
+							<span class ="gameImg">
+								<img src ="images/1.jpg" data-img="images/1.jpg"data-gif width="255" height="170">
+							</span>
+						</div>
+					</li>
+					<li>
+						<div class ="game">
+							<span class ="gameImg">
+								<img src ="images/1.jpg" data-img="images/1.jpg"data-gif width="255" height="170">
+							</span>
+						</div>
+					</li>
+					<li>
+						<div class ="game">
+							<span class ="gameImg">
+								<img src ="images/1.jpg" data-img="images/1.jpg"data-gif width="255" height="170">
+							</span>
+						</div>
+					</li>
+				</ul>
+				
+			</div>
+			
+
+		
+		</div>
+		
 		<!-- footer -->
 		<footer>
 	      <div style="padding: 20px 0 38px">
@@ -112,4 +158,5 @@
 	
 	
 </body>
+
 </html>
