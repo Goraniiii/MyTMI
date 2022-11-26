@@ -11,48 +11,49 @@
 <link rel="stylesheet" href="css/custom.css"> -->
 
 
+
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/mainpage2.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
 
-<title>MyTmi</title>
+<title>MyTMI</title>
 </head>
 <body>
 	<div class="wrapper">
 		<!-- 헤더 -->
-	<header id="mainPageHeader">
+		<header id="mainPageHeader">
       <nav class="headerContainer">
          <div class="logoContainer">
             <a href="main.jsp"><img id="logo" src="images/logo.png"></a>  
          </div>         
          
-          <button id="login" type="button"><a href="board.jsp">게시판</a></button>
+          
           <%-- 로그인 버튼을 로그아웃 버튼으로 바꾸기 --%>
-			
+ 		   <button id="login" type="button"><a href="board.jsp">게시판</a></button>
            <div class="LoginButtonContainer">
               <% 
-               if(session.getAttribute("userid")==null){%>
+               if(session.getAttribute("userID")==null){%>
                      <button id="login" type="button"><a href="login.jsp">로그인</a></button><%}
                else{
-                  %><%=session.getAttribute("userid")%>님 환영합니다!<button align="right" id="logout" type="button" onclick="location.href='logout.jsp'">로그아웃</button><br>
-                  <button align="left" id="logout" type="button" onclick="location.href='mypage.jsp'">마이페이지</button><br>
+                  %><%=session.getAttribute("userID")%>님 환영합니다!
+                  <button align="right" id="logout" type="button" onclick="location.href='logoutAction.jsp'">로그아웃</button><br>
                <%}
             %>
            </div>
            <div class="signUpButtonContainer">
               <% 
-               if(session.getAttribute("userid")==null){%>
+               if(session.getAttribute("userID")==null){%>
                      <button id="signUp" type="button"><a href="join.jsp">회원가입</a></button><%
                }
             %>
            </div>
-           <div class="myPageButtonContainer">
+           <!-- <div class="myPageButtonContainer">
            	  <% 
 	           	if(session.getAttribute("userid")==null){%>
 	            	<button id="mypage" type="button">게시판</button><%
 	   			}
            	 %>
-           </div>
+           </div> -->
       </nav>
     </header>
    
@@ -84,7 +85,7 @@
 				<span class="glyphicon glyphicon-chevron-right"></span>
 			</a>
 		</div>
-		
+		<!--
 		<div class="searchContainer">
             <form action="search.jsp" style="width: 100%">
                 <label class="searchLabel">
@@ -93,7 +94,7 @@
                     </div>
                 </label>
             </form>
-          </div> 
+          </div>  -->
 		
 		
 		<!-- gallery -->
@@ -129,6 +130,7 @@
 						</div>
 					</li>
 				</ul>
+				
 			</div>
 		</div>
 		
@@ -144,8 +146,9 @@
 	          </div>
 	       </div>
 		</footer>
-	</div>
+		</div>
 		
+	</div>
 	
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="js/bootstrap.js"></script>

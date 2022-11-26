@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width", initial-scale="1">
 <link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/board.css">
 <link rel="stylesheet" href="css/custom.css">
 <title>JSP 게시판 웹 사이트</title>
 </head>
@@ -16,7 +17,54 @@
 		if(session.getAttribute("userID") != null){
 			userID = (String) session.getAttribute("userID");
 		}
+		
+		
+		if(userID == null){
+	    	PrintWriter script = response.getWriter();
+			script.println("<script>");
+			script.println("alert('로그인을 하세요.')");
+			script.println("location.href = 'login.jsp'");
+			script.println("</script>");
+	    }
 	%>
+	<header id="mainPageHeader">
+      <nav class="headerContainer">
+         <div class="logoContainer" style="margin-left : -80px">
+            <a href="main.jsp"><img id="logo" src="images/logo.png"></a>  
+         </div>         
+         
+          
+          
+          <%-- 로그인 버튼을 로그아웃 버튼으로 바꾸기 --%>
+ 		   <button id="login" type="button"><a href="board.jsp">게시판</a></button>
+           <div class="LoginButtonContainer">
+              <% 
+               if(session.getAttribute("userID")==null){%>
+                     <button id="login" type="button"><a href="login.jsp">로그인</a></button><%}
+               else{
+                  %><%=session.getAttribute("userID")%>님 환영합니다!
+                  <button align="right" id="logout" type="button" onclick="location.href='logoutAction.jsp'">로그아웃</button><br>
+                  <!-- <button align="left" id="logout" type="button" onclick="location.href='mypage.jsp'">마이페이지</button><br> -->
+               <%}
+            %>
+           </div>
+           <div class="signUpButtonContainer">
+              <% 
+               if(session.getAttribute("userID")==null){%>
+                     <button id="signUp" type="button"><a href="join.jsp">회원가입</a></button><%
+               }
+            %>
+           </div>
+           <div class="myPageButtonContainer">
+           	  <% 
+	           	if(session.getAttribute("userID")==null){%>
+	            	<button id="mypage" type="button">게시판</button><%
+	   			}
+           	 %>
+           </div>
+      </nav>
+    </header>
+	<!--
 	<nav class="navbar navbar-default">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed"
@@ -31,7 +79,7 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="main.jsp">메인</a></li>
-				<li><a href="board.jsp">게시판</a></li>
+				<li><a href="bbs.jsp">게시판</a></li>
 			</ul>
 			<%
 				if(userID == null){
@@ -65,7 +113,9 @@
 			%>
 		</div>
 	</nav>
-	<div class="container">
+	-->
+	
+	<div class="container" style="padding-top: 90px">
 		<div class="row">
 			<form method="post" action="writeAction.jsp">
 				<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">

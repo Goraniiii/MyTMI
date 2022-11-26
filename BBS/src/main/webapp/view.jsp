@@ -26,7 +26,7 @@
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
 			script.println("alert('유효하지 않은 글입니다.')");
-			script.println("location.href = 'board.jsp'");
+			script.println("location.href = 'bbs.jsp'");
 			script.println("</script>");
 		}
 		Bbs bbs = new BbsDAO().getBbs(bbsID);
@@ -45,7 +45,7 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="main.jsp">메인</a></li>
-				<li><a href="board.jsp">게시판</a></li>
+				<li><a href="bbs.jsp">게시판</a></li>
 			</ul>
 			<%
 				if(userID == null){
@@ -106,7 +106,7 @@
 					</tr>
 				</tbody>
 			</table>
-			<a href="board.jsp" class="btn btn-primary">목록</a>
+			<a href="bbs.jsp" class="btn btn-primary">목록</a>
 			<%
 				if(userID != null && userID.equals(bbs.getUserID())){
 			%>

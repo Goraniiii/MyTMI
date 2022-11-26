@@ -45,16 +45,8 @@ body{
 /*	padding-bottom: 170px;	*/
 	width: 1000px;
 	height: 500px;
-	
 	width: 100%;
 	text-align: center;
-	
-	
-}
-
-#test{
-	background:red;
-	height:300px;
 }
 
 .totalContainer{
@@ -104,8 +96,9 @@ body{
 
 /* 로고의 사이즈 조절 */
 #logo{
+	
 	width: auto;
-	height: 50px;
+	height: 30px;
 }
 
 .searchContainer{
@@ -152,6 +145,22 @@ body{
 }
 
 /* 헤더에 있는 로그인 버튼 컨테이너  */
+.BoardButtonContainer{
+	display: flex;
+	align-items: center;
+	margin: 0px 0px 0px 24px;
+	height: 62px;
+}
+#board{
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 14px;
+	cursor: pointer;
+	background: transparent;
+	color: rgb(116, 116, 123);
+	margin: 15px 0px;
+	padding: 0px;
+	border: 0px;
+}
 .LoginButtonContainer{
 	display: flex;
 	align-items: center;
@@ -379,16 +388,16 @@ footer{
 .wrapper .allGame .pc.cardView .gameImg {
     position: relative;
     display: block;
-    width: 256px;
-    height: 128px;
+    width: 255px;
+    height: 170px;
     overflow: hidden
 }
 
 .wrapper .allGame .pc.cardView .gameImg:after {
     content: "";
     display: block;
-    width: 256px;
-    height: 128px;
+    width: 255px;
+    height: 170px;
     background-color: #000;
     opacity: .1
 }
@@ -404,8 +413,9 @@ footer{
     transform: scale(1) translateZ(0)
 }
 
-
 img{
 	width: 100%;
 	height: auto;
+	margin: auto;
+    display: block;
 }

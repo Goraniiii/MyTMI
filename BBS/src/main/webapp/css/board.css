@@ -1,0 +1,173 @@
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 100;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.otf) format('opentype');}
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 300;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.otf) format('opentype');}
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 400;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf) format('opentype');}
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 500;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf) format('opentype');}
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 700;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.otf) format('opentype');}
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 900;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.otf) format('opentype');}
+
+/********************************************************/
+html{
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+html,
+body{
+	margin: 0;
+	padding : 0;
+	height : 100%;
+}
+.container{
+	min-height:100%;
+	position : relative;
+	
+	align-items: center;
+	justify-content: center;
+}
+#mainPageHeader{
+	background: white; 
+	position: fixed; 
+	width: 100%; 
+	box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 0px 0px;
+	z-index: 100; 
+	top: 0; 
+	left: 0;
+}
+
+/* 헤더 전체를 감싸는 컨테이너 */
+.headerContainer{
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	margin: 0px 108px;
+	
+}
+.logoContainer{
+	margin : 0px auto;
+}
+
+/* 로고의 사이즈 조절 */
+#logo{
+	width: auto;
+	height: 30px;
+}
+.BoardButtonContainer{
+	display: flex;
+	align-items: center;
+	margin: 0px 0px 0px 24px;
+	height: 62px;
+}
+#board{
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 14px;
+	cursor: pointer;
+	background: transparent;
+	color: rgb(116, 116, 123);
+	margin: 15px 0px;
+	padding: 0px;
+	border: 0px;
+}
+.LoginButtonContainer{
+	display: flex;
+	align-items: center;
+	margin: 0px 0px 0px 24px;
+	height: 62px;
+}
+
+/* 헤더에 있는 로그인 버튼  */
+#login{
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 14px;
+	cursor: pointer;
+	background: transparent;
+	color: rgb(116, 116, 123);
+	margin: 15px 0px;
+	padding: 0px;
+	border: 0px;
+}
+#logout{
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 14px;
+	font-weight: 500;
+	cursor: pointer;
+	background: transparent;
+	color: rgb(53, 53, 53);
+	margin: 0px 0px 0px 20px;
+	padding: 5px 14px 6px;
+	border: 1px solid rgba(116, 116, 123, 0.5);
+	border-radius: 6px;
+}
+
+/* 헤더에 있는 회원가입 버튼 컨테이너  */
+.signUpButtonContainer{
+	display: flex;
+	align-items: center;
+	margin: 0px 0px 0px 24px;
+	height: 62px;
+}
+
+/* 헤더에 있는 회원가입 버튼  */
+#signUp{
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 14px;
+	font-weight: 500;
+	cursor: pointer;
+	background: transparent;
+	color: rgb(53, 53, 53);
+	margin: 15px 0px;
+	padding: 5px 14px 6px;
+	border: 1px solid rgba(116, 116, 123, 0.5);
+	border-radius: 6px;
+}
+
+/* 마이페이지 버튼 */
+#mypage{
+	display: none;
+	height:30px;
+	width:130px;
+	border:1.5px solid #f77;
+	background:white;
+	color:#f77;
+	margin-right:10px;
+	margin-bottom:-10px;
+	margin-left:10px;
+	float:left;
+}
+button:focus {border: none; outline: none;}
+
+input:focus{border: none; outline: none;}
+
+footer{
+	background-color: black;
+    width: 100%;
+    height: 170px; /* footer의 높이 */
+    position: relative;  
+    bottom: 0;
+    left: 0;
+    
+    
+}
+
+.siteInfoConatiner{
+	color: #a5a5a7;
+	font-size: 13px;
+	font-weight: 400;
+	letter-spacing: -0.3px;
+	line-height: 22px;
+	position: relative;
+	left: 100px;
+}
+
+.makerInfoConatiner{
+	color: #848485;
+	font-size: 13px;
+	font-weight: 400;
+	letter-spacing: -0.3px;
+	line-height: 22px;
+	position: relative;
+	left: 100px;
+	margin-top: 13px;
+}
+
+.jumbotron{
+	background : white;
+}

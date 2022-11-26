@@ -25,15 +25,18 @@
 			script.println("location.href = 'login.jsp'");
 			script.println("</script>");
 	    } else{
+	    	
 	    	if(bbs.getBbsTitle() == null || bbs.getBbsContent() == null) {
 	    				PrintWriter script = response.getWriter();
 	    				script.println("<script>");
 	    				script.println("alert('입력이 안 된 사항이 있습니다.')");
 	    				script.println("history.back()");
 	    				script.println("</script>");
-	    			} else{
+	    	} 
+	    	else{
 	    				BbsDAO bbsDAO = new BbsDAO();
 	    				int result = bbsDAO.write(bbs.getBbsTitle(), userID ,bbs.getBbsContent());
+	    				
 	    				if(result == -1){
 	    					PrintWriter script = response.getWriter();
 	    					script.println("<script>");
@@ -48,7 +51,7 @@
 	    					script.println("</script>");
 	    				}
 	    				
-	    			}
+	    	}
 	    }
 	%>
 </body>
