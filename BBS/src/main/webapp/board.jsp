@@ -11,6 +11,8 @@
 <meta name="viewport" content="width=device-width", initial-scale="1">
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/custom.css">
+<link rel="stylesheet" href="css/mainpage2.css">
+
 <title>JSP 게시판 웹 사이트</title>
 <style type="text/css">
 	a, a:hover {
@@ -30,7 +32,44 @@
 			pageNumber = Integer.parseInt(request.getParameter("pageNumber"));
 		}
 	%>
-	<nav class="navbar navbar-default">
+	
+	<header id="mainPageHeader">
+      <nav class="headerContainer">
+         <div class="logoContainer">
+            <a href="main.jsp"><img id="logo" src="images/logo.png"></a>  
+         </div>         
+         
+          <button id="login" type="button"><a href="board.jsp">게시판</a></button>
+          <%-- 로그인 버튼을 로그아웃 버튼으로 바꾸기 --%>
+			
+           <div class="LoginButtonContainer">
+              <% 
+               if(session.getAttribute("userid")==null){%>
+                     <button id="login" type="button"><a href="login.jsp">로그인</a></button><%}
+               else{
+                  %><%=session.getAttribute("userid")%>님 환영합니다!<button align="right" id="logout" type="button" onclick="location.href='logout.jsp'">로그아웃</button><br>
+                  <button align="left" id="logout" type="button" onclick="location.href='mypage.jsp'">마이페이지</button><br>
+               <%}
+            %>
+           </div>
+           <div class="signUpButtonContainer">
+              <% 
+               if(session.getAttribute("userid")==null){%>
+                     <button id="signUp" type="button"><a href="join.jsp">회원가입</a></button><%
+               }
+            %>
+           </div>
+           <div class="myPageButtonContainer">
+           	  <% 
+	           	if(session.getAttribute("userid")==null){%>
+	            	<button id="mypage" type="button">게시판</button><%
+	   			}
+           	 %>
+           </div>
+      </nav>
+    </header>
+	
+	<!-- <nav class="navbar navbar-default">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed"
 				data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
@@ -77,9 +116,12 @@
 				}
 			%>
 		</div>
-	</nav>
+	</nav> -->
+	
+	
+	
 	<div class="container">
-		<div class="row">
+		<div class="row" style="padding-top: 90px">
 			<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
 				<thead>
 					<tr>
@@ -109,11 +151,11 @@
 			<%
 				if(pageNumber != 1){
 			%>
-				<a href="bbs.jsp?pageNumber=<%=pageNumber - 1 %>" class="btn btn-success btn-arrow-left">이전</a>
+				<a href="board.jsp?pageNumber=<%=pageNumber - 1 %>" class="btn btn-success btn-arrow-left">이전</a>
 			<% 		
 				} if(bbsDAO.nextPage(pageNumber + 1)){
 			%>
-				<a href="bbs.jsp?pageNumber=<%=pageNumber + 1 %>" class="btn btn-success btn-arrow-left">다음</a>
+				<a href="board.jsp?pageNumber=<%=pageNumber + 1 %>" class="btn btn-success btn-arrow-left">다음</a>
 			<% 		
 				}
 			%>

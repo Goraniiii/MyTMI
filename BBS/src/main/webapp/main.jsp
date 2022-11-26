@@ -11,7 +11,6 @@
 <link rel="stylesheet" href="css/custom.css"> -->
 
 
-
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/mainpage2.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
@@ -21,15 +20,15 @@
 <body>
 	<div class="wrapper">
 		<!-- 헤더 -->
-		<header id="mainPageHeader">
+	<header id="mainPageHeader">
       <nav class="headerContainer">
          <div class="logoContainer">
             <a href="main.jsp"><img id="logo" src="images/logo.png"></a>  
          </div>         
          
-          
+          <button id="login" type="button"><a href="board.jsp">게시판</a></button>
           <%-- 로그인 버튼을 로그아웃 버튼으로 바꾸기 --%>
-
+			
            <div class="LoginButtonContainer">
               <% 
                if(session.getAttribute("userid")==null){%>
@@ -130,11 +129,7 @@
 						</div>
 					</li>
 				</ul>
-				
 			</div>
-			
-
-		
 		</div>
 		
 		<!-- footer -->
@@ -149,9 +144,8 @@
 	          </div>
 	       </div>
 		</footer>
-		</div>
-		
 	</div>
+		
 	
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="js/bootstrap.js"></script>

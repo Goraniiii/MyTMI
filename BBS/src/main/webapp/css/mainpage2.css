@@ -379,16 +379,16 @@ footer{
 .wrapper .allGame .pc.cardView .gameImg {
     position: relative;
     display: block;
-    width: 255px;
-    height: 170px;
+    width: 256px;
+    height: 128px;
     overflow: hidden
 }
 
 .wrapper .allGame .pc.cardView .gameImg:after {
     content: "";
     display: block;
-    width: 255px;
-    height: 170px;
+    width: 256px;
+    height: 128px;
     background-color: #000;
     opacity: .1
 }
@@ -403,6 +403,7 @@ footer{
 .wrapper .allGame .pc.cardView .gameImg img {
     transform: scale(1) translateZ(0)
 }
+
 
 img{
 	width: 100%;
