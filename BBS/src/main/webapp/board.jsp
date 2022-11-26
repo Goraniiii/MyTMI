@@ -162,6 +162,21 @@
 			<a href = "write.jsp" class="btn btn-primary pull-right">글쓰기</a>
 		</div>
 	</div>
+	
+	<!-- footer -->
+	<footer>
+	    <div style="padding: 20px 0 38px">
+	      <div class="siteInfoConatiner">
+	              동국대학교<br>웹프로그래밍 
+	      </div>
+	      <div class="makerInfoConatiner">
+	              임치현 | 김민환 | 이수연 | 박고운 <br>
+	              © 2022 MyTMI. project
+	      </div>
+	   </div>
+	</footer>
+	
+	
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="js/bootstrap.js"></script>
 </body>
