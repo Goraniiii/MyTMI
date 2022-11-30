@@ -11,9 +11,14 @@
 <meta name="viewport" content="width=device-width", initial-scale="1">
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/custom.css">
-<link rel="stylesheet" href="css/mainpage2.css">
-<!-- <link rel="stylesheet" href="css/board.css">  -->
-<title>JSP 게시판 웹 사이트</title>
+<link rel="stylesheet" href="css/board.css">
+<title>MyTMI</title>
+<style type="text/css">
+	a, a:hover {
+	color: #000000;
+	text-decoration: none;
+	}
+</style>
 </head>
 <body>
 	<%
@@ -33,16 +38,17 @@
          </div>         
          
           
-          
           <%-- 로그인 버튼을 로그아웃 버튼으로 바꾸기 --%>
- 		   <button id="login" type="button"><a href="board.jsp">게시판</a></button>
+ 		   <div class="BoardButtonContainer">
+ 		   		<button id="board" type="button"><a href="board.jsp">게시판</a></button>
+ 		   </div>
            <div class="LoginButtonContainer">
               <% 
                if(session.getAttribute("userID")==null){%>
                      <button id="login" type="button"><a href="login.jsp">로그인</a></button><%}
                else{
-                  %><%=session.getAttribute("userID")%>님 환영합니다!
-                  <button align="right" id="logout" type="button" onclick="location.href='logoutAction.jsp'">로그아웃</button><br>
+                  %><%=session.getAttribute("userID")%>님 환영합니다!<button align="right" id="logout" type="button" onclick="location.href='logoutAction.jsp'">로그아웃</button><br>
+                  
                <%}
             %>
            </div>
@@ -52,7 +58,6 @@
                      <button id="signUp" type="button"><a href="join.jsp">회원가입</a></button><%
                }
             %>
-            <!-- 
            </div>
            <div class="myPageButtonContainer">
            	  <% 
@@ -61,7 +66,6 @@
 	   			}
            	 %>
            </div>
-            -->
       </nav>
     </header>
 	
@@ -96,11 +100,11 @@
 			<%
 				if(pageNumber != 1){
 			%>
-				<a href="bbs.jsp?pageNumber=<%=pageNumber - 1 %>" class="btn btn-success btn-arrow-left">이전</a>
+				<a href="board.jsp?pageNumber=<%=pageNumber - 1 %>" class="btn btn-success btn-arrow-left">이전</a>
 			<% 		
 				} if(bbsDAO.nextPage(pageNumber + 1)){
 			%>
-				<a href="bbs.jsp?pageNumber=<%=pageNumber + 1 %>" class="btn btn-success btn-arrow-left">다음</a>
+				<a href="board.jsp?pageNumber=<%=pageNumber + 1 %>" class="btn btn-success btn-arrow-left">다음</a>
 			<% 		
 				}
 			%>

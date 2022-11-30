@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/board.css">
 <link rel="stylesheet" href="css/custom.css">
-<title>JSP 게시판 웹 사이트</title>
+<title>MyTMI</title>
 </head>
 <body>
 	<%
@@ -17,7 +17,6 @@
 		if(session.getAttribute("userID") != null){
 			userID = (String) session.getAttribute("userID");
 		}
-		
 		
 		if(userID == null){
 	    	PrintWriter script = response.getWriter();
@@ -34,17 +33,17 @@
          </div>         
          
           
-          
           <%-- 로그인 버튼을 로그아웃 버튼으로 바꾸기 --%>
- 		   <button id="login" type="button"><a href="board.jsp">게시판</a></button>
+ 		   <div class="BoardButtonContainer">
+ 		   		<button id="board" type="button"><a href="board.jsp">게시판</a></button>
+ 		   </div>
            <div class="LoginButtonContainer">
               <% 
                if(session.getAttribute("userID")==null){%>
                      <button id="login" type="button"><a href="login.jsp">로그인</a></button><%}
                else{
-                  %><%=session.getAttribute("userID")%>님 환영합니다!
-                  <button align="right" id="logout" type="button" onclick="location.href='logoutAction.jsp'">로그아웃</button><br>
-                  <!-- <button align="left" id="logout" type="button" onclick="location.href='mypage.jsp'">마이페이지</button><br> -->
+                  %><%=session.getAttribute("userID")%>님 환영합니다!<button align="right" id="logout" type="button" onclick="location.href='logoutAction.jsp'">로그아웃</button><br>
+                  
                <%}
             %>
            </div>
@@ -64,57 +63,6 @@
            </div>
       </nav>
     </header>
-	<!--
-	<nav class="navbar navbar-default">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed"
-				data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-				aria-expanded="false">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="main.jsp">JSP 게시판 웹 사이트</a>
-		</div>
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<ul class="nav navbar-nav">
-				<li class="active"><a href="main.jsp">메인</a></li>
-				<li><a href="bbs.jsp">게시판</a></li>
-			</ul>
-			<%
-				if(userID == null){
-			%>
-			<ul class="nav navbar-nav navbar-right">
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle"
-						data-toggle="dropdown" role="button" aria-haspopup="true"
-						aria-expanded="false">접속하기<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="login.jsp">로그인</a></li>
-						<li><a href="join.jsp">회원가입</a></li>
-					</ul>
-				</li>
-			</ul>
-			<% 		
-				} else {
-			%>
-			<ul class="nav navbar-nav navbar-right">
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle"
-						data-toggle="dropdown" role="button" aria-haspopup="true"
-						aria-expanded="false">회원관리<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="logoutAction.jsp">로그아웃</a></li>
-					</ul>
-				</li>
-			</ul>
-			<% 
-				}
-			%>
-		</div>
-	</nav>
-	-->
-	
 	<div class="container" style="padding-top: 90px">
 		<div class="row">
 			<form method="post" action="writeAction.jsp">

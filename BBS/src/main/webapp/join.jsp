@@ -8,7 +8,6 @@
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/custom.css">
 <link rel="stylesheet" href="css/board.css">
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
 <title>MyTMI</title>
 </head>
 <body>
@@ -28,13 +27,6 @@
            <div class="LoginButtonContainer">
            		 <button id="login" type="button"><a href="login.jsp">로그인</a></button>          
            </div>
-           <!-- <div class="myPageButtonContainer">
-           	  <% 
-	           	if(session.getAttribute("userid")==null){%>
-	            	<button id="mypage" type="button">게시판</button><%
-	   			}
-           	 %>
-           </div> -->
       </nav>
     </header>
 	<div class="container" style="padding-top : 90px">
@@ -63,7 +55,7 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<input type="email" class="form-control" placeholder="이메일" name="userEmail" maxlength="20">
+						<input type="email" class="form-control" placeholder="이메일" name="userEmail" maxlength="30">
 					</div>
 					<input type ="submit" class="btn-primary form-control" value="회원가입">
 				</form>

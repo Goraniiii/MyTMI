@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="user.User" %>
+<%@ page import="user.UserDAO" %>
+    
+    
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,14 +35,7 @@
                }
             %>
            </div>
-           <!-- <div class="myPageButtonContainer">
-           	  <% 
-	           	if(session.getAttribute("userid")==null){%>
-	            	<button id="mypage" type="button">게시판</button><%
-	   			}
-           	 %>
-           </div> -->
-      </nav>
+           
     </header>
 	<div class="container"style="padding-top : 90px">
 		<div class="col-lg-4" ></div>

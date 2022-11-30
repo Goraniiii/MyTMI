@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.io.PrintWriter" %>
+<%@ page import="gallery.Gallery" %>
+<%@ page import="gallery.GalleryDAO" %>
+<%@ page import="java.util.ArrayList" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,14 +32,16 @@
          
           
           <%-- 로그인 버튼을 로그아웃 버튼으로 바꾸기 --%>
- 		   <button id="login" type="button"><a href="board.jsp">게시판</a></button>
+ 		   <div class="BoardButtonContainer">
+ 		   		<button id="board" type="button"><a href="board.jsp">게시판</a></button>
+ 		   </div>
            <div class="LoginButtonContainer">
               <% 
                if(session.getAttribute("userID")==null){%>
                      <button id="login" type="button"><a href="login.jsp">로그인</a></button><%}
                else{
-                  %><%=session.getAttribute("userID")%>님 환영합니다!
-                  <button align="right" id="logout" type="button" onclick="location.href='logoutAction.jsp'">로그아웃</button><br>
+                  %><%=session.getAttribute("userID")%>님 환영합니다!<button align="right" id="logout" type="button" onclick="location.href='logoutAction.jsp'">로그아웃</button><br>
+                  
                <%}
             %>
            </div>
@@ -47,13 +52,13 @@
                }
             %>
            </div>
-           <!-- <div class="myPageButtonContainer">
+           <div class="myPageButtonContainer">
            	  <% 
-	           	if(session.getAttribute("userid")==null){%>
+	           	if(session.getAttribute("userID")==null){%>
 	            	<button id="mypage" type="button">게시판</button><%
 	   			}
            	 %>
-           </div> -->
+           </div>
       </nav>
     </header>
    
@@ -85,7 +90,7 @@
 				<span class="glyphicon glyphicon-chevron-right"></span>
 			</a>
 		</div>
-		<!--
+		
 		<div class="searchContainer">
             <form action="search.jsp" style="width: 100%">
                 <label class="searchLabel">
@@ -94,41 +99,30 @@
                     </div>
                 </label>
             </form>
-          </div>  -->
+          </div> 
 		
 		
 		<!-- gallery -->
 		<div class="allGame" id="allGame">
 				<ul class="pc cardView">
+				
+				<%
+				GalleryDAO gallDao = new GalleryDAO();
+				ArrayList<Gallery> list = gallDao.getList();
+				for(int i = 0; i < list.size(); i++){ 
+				%>
 					<li>
+					<a href ="<%= list.get(i).getTestLink() %>" >
 						<div class ="game">
 							<span class ="gameImg">
-								<img src ="images/1.jpg" data-img="images/1.jpg"data-gif width="255" height="170">
+								<img src ="<%=list.get(i).getImgLink() %>" data-img="<%=list.get(i).getImgLink() %>" data-gif width="255" height="170">
 							</span>
 						</div>
+						</a>
 					</li>
-					
-					<li>
-						<div class ="game">
-							<span class ="gameImg">
-								<img src ="images/1.jpg" data-img="images/1.jpg"data-gif width="255" height="170">
-							</span>
-						</div>
-					</li>
-					<li>
-						<div class ="game">
-							<span class ="gameImg">
-								<img src ="images/1.jpg" data-img="images/1.jpg"data-gif width="255" height="170">
-							</span>
-						</div>
-					</li>
-					<li>
-						<div class ="game">
-							<span class ="gameImg">
-								<img src ="images/1.jpg" data-img="images/1.jpg"data-gif width="255" height="170">
-							</span>
-						</div>
-					</li>
+				<%
+				}
+				%>
 				</ul>
 				
 			</div>
