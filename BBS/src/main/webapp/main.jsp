@@ -102,7 +102,7 @@
 				ArrayList<Gallery> list = gallDao.getList();
 				for(int i = 0; i < list.size(); i++){ 
 				%>
-					<li>
+					<li> 
 					<a href ="<%= list.get(i).getTestLink() %>" >
 						<div class ="game">
 							<span class ="gameImg">
