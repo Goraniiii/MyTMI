@@ -13,10 +13,8 @@
 
 <link rel="stylesheet" href="css/custom.css"> -->
 
-
-
-<link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/mainpage2.css">
+<link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
 
 <title>MyTMI</title>
@@ -91,16 +89,9 @@
 			</a>
 		</div>
 		
-		<div class="searchContainer">
-            <form action="search.jsp" style="width: 100%">
-                <label class="searchLabel">
-                    <div class="searchBox">
-                        <input class="inputSearch" name="searchisbn" type="search" placeholder="검색" autocomplete="off" value="">
-                    </div>
-                </label>
-            </form>
-          </div> 
-		
+		<div style="padding-top:20px">
+			
+		</div>
 		
 		<!-- gallery -->
 		<div class="allGame" id="allGame">
@@ -116,7 +107,9 @@
 						<div class ="game">
 							<span class ="gameImg">
 								<img src ="<%=list.get(i).getImgLink() %>" data-img="<%=list.get(i).getImgLink() %>" data-gif width="255" height="170">
+								<span style="font-family:'Noto Sans KR', sans-serif; color : black; font-size:18px; font-weight:bold; padding:10px 0px 20px 20px;"><%=list.get(i).getTitle() %></span>
 							</span>
+							
 						</div>
 						</a>
 					</li>
@@ -140,8 +133,6 @@
 	          </div>
 	       </div>
 		</footer>
-		</div>
-		
 	</div>
 	
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>

@@ -52,8 +52,8 @@ public class BbsDAO {
 		return -1; //데이터베이스 오류
 	}
 	
-	public int write(String bbsTitle, String userID, String bbsContent) {
-		String SQL = "INSERT INTO BBS VALUES(?, ?, ?, ? ,? ,?)";
+	public int write(String bbsTitle, String userID, String bbsContent, String bbsImageUrl) {
+		String SQL = "INSERT INTO BBS VALUES(?, ?, ?, ? ,? ,?, ?)";
 		try {
 			 PreparedStatement pstmt = conn.prepareStatement(SQL);
 			 pstmt.setInt(1,  getNext());
@@ -61,7 +61,8 @@ public class BbsDAO {
 			 pstmt.setString(3,  userID);
 			 pstmt.setString(4,  getDate());
 			 pstmt.setString(5,  bbsContent);
-			 pstmt.setInt(6,  1);
+			 pstmt.setString(6, bbsImageUrl);
+			 pstmt.setInt(7,  1);
 			 return pstmt.executeUpdate();
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -83,7 +84,8 @@ public class BbsDAO {
 				 bbs.setUserID(rs.getString(3));
 				 bbs.setBbsDate(rs.getString(4));
 				 bbs.setBbsContent(rs.getString(5));
-				 bbs.setBbsAvailable(rs.getInt(6));
+				 bbs.setBbsImageUrl(rs.getString(6));
+				 bbs.setBbsAvailable(rs.getInt(7));
 				 list.add(bbs);
 			 }
 		} catch(Exception e) {
@@ -121,7 +123,8 @@ public class BbsDAO {
 				 bbs.setUserID(rs.getString(3));
 				 bbs.setBbsDate(rs.getString(4));
 				 bbs.setBbsContent(rs.getString(5));
-				 bbs.setBbsAvailable(rs.getInt(6));
+				 bbs.setBbsImageUrl(rs.getString(6));
+				 bbs.setBbsAvailable(rs.getInt(7));
 				 return bbs;
 			 }
 		} catch(Exception e) {
@@ -130,13 +133,14 @@ public class BbsDAO {
 		return null; //데이터베이스 오류
 	}
 	
-	public int update(int bbsID, String bbsTitle, String bbsContent) {
-		String SQL = "UPDATE BBS SET bbsTitle = ?, bbsContent = ? WHERE bbsID = ?";
+	public int update(int bbsID, String bbsTitle, String bbsContent, String bbsImageUrl) {
+		String SQL = "UPDATE BBS SET bbsTitle = ?, bbsContent = ?, bbsImageUrl = ? WHERE bbsID = ?";
 		try {
 			 PreparedStatement pstmt = conn.prepareStatement(SQL);
 			 pstmt.setString(1,  bbsTitle);
 			 pstmt.setString(2,  bbsContent);
-			 pstmt.setInt(3,  bbsID);
+			 pstmt.setString(3, bbsImageUrl);
+			 pstmt.setInt(4,  bbsID);
 			 return pstmt.executeUpdate();
 		} catch(Exception e) {
 			e.printStackTrace();

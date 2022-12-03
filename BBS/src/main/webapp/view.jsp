@@ -3,6 +3,7 @@
 <%@ page import="java.io.PrintWriter" %>
 <%@ page import="bbs.Bbs" %>
 <%@ page import="bbs.BbsDAO" %>
+<%@ page import="java.io.File" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -89,6 +90,18 @@
 					<tr>
 						<td>작성일자</td>
 						<td colspan="2"><%= bbs.getBbsDate().substring(0, 11) + bbs.getBbsDate().substring(11, 13) + "시 " + bbs.getBbsDate().substring(14, 16) + "분" %></td>
+					</tr>
+					<tr>
+						<td>사진</td>
+						
+						<%
+						//String real = "/Users/goraniiii/eclipse-workspace/teamproject/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/BBS/storage";
+						File viewFile = new File(request.getServletContext().getRealPath("/storage") + "/" + bbs.getBbsImageUrl());
+						if(viewFile.exists()){ %>
+							
+								<td colspan="6"><img src =storage/<%=bbs.getBbsImageUrl() %> border="300px" width="500px" height="auto"><br><br>
+						<% }
+						else {%><td colspan="6"><%} %>
 					</tr>
 					<tr>
 						<td>내용</td>

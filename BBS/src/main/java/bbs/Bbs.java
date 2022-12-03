@@ -7,7 +7,9 @@ public class Bbs {
 	private String userID;
 	private String bbsDate;
 	private String bbsContent;
+	private String bbsImageUrl;
 	private int bbsAvailable;
+	
 	
 	public int getBbsID() {
 		return bbsID;
@@ -44,6 +46,12 @@ public class Bbs {
 	}
 	public void setBbsAvailable(int bbsAvailable) {
 		this.bbsAvailable = bbsAvailable;
+	}
+	public String getBbsImageUrl() {
+		return bbsImageUrl;
+	}
+	public void setBbsImageUrl(String bbsImageUrl) {
+		this.bbsImageUrl = bbsImageUrl;
 	}
 	
 	

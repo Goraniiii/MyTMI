@@ -89,8 +89,6 @@ public class GalleryDAO{
 				gall.setImgLink(rs.getString(3));
 				gall.setTestLink(rs.getString(4));
 				return gall;
-				 
-				 
 			 }
 		} catch(Exception e) {
 			e.printStackTrace();
