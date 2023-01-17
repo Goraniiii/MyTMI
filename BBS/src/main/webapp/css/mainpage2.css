@@ -351,7 +351,7 @@ footer{
 }
 
 .wrapper .allGame .pc.cardView li {
-    height: 272px;
+    height: 230px;
     margin: 0 24px 60px 0
 }
 
@@ -365,7 +365,7 @@ footer{
 }
 
 .wrapper .allGame .pc.cardView .game {
-    height: 272px;
+    height: 230px;
     background-color: #fff;
     transition: all .15s linear;
     cursor: pointer
@@ -419,3 +419,7 @@ img{
 	margin: auto;
     display: block;
 }
+
+
+
+

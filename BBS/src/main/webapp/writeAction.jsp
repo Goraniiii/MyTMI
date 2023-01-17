@@ -24,7 +24,7 @@
 	    	userID = (String) session.getAttribute("userID");
 	    }
 	    
-	    String realFolder = request.getServletContext().getRealPath("/storage");
+	    String realFolder = request.getServletContext().getRealPath("/storage"); 
 		String saveFolder = "/storage";
 		String encType = "utf-8";
 		int maxSize=5*1024*1024;

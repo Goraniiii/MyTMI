@@ -96,7 +96,7 @@ public class BbsDAO {
 	
 	public boolean nextPage(int pageNumber) {
 		String SQL = "SELECT * FROM BBS WHERE bbsID < ? AND bbsAvailable = 1 ";
-		ArrayList<Bbs> list = new ArrayList<Bbs>();
+		//ArrayList<Bbs> list = new ArrayList<Bbs>();
 		try {
 			 PreparedStatement pstmt = conn.prepareStatement(SQL);
 			 pstmt.setInt(1, getNext() - (pageNumber - 1) * 10);

@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-import bbs.Bbs;
+//import bbs.Bbs;
 
 public class GalleryDAO{
 	private Connection conn;
@@ -62,7 +62,7 @@ public class GalleryDAO{
 	
 	public boolean nextPage() {
 		String SQL = "SELECT * FROM GALLERY WHERE ID < ?";
-		ArrayList<Bbs> list = new ArrayList<Bbs>();
+		//ArrayList<Bbs> list = new ArrayList<Bbs>();
 		try {
 			 PreparedStatement pstmt = conn.prepareStatement(SQL);
 			 pstmt.setInt(1, getNext());

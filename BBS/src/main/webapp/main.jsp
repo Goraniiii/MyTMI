@@ -11,7 +11,7 @@
 
 <!-- <meta name="viewport" content="width=device-width", initial-scale="1">
 
-<link rel="stylesheet" href="css/custom.css"> -->
+<link rel="stylesheet" href="css/custom.css"> --> 
 
 <link rel="stylesheet" href="css/mainpage2.css">
 <link rel="stylesheet" href="css/bootstrap.css">
@@ -72,13 +72,13 @@
 			
 			<div class="carousel-inner">
 				<div class="item active">
-					<img src="images/1.jpg" >
+					<a href = "https://ktestone.com/kapable.github.io/personalColor2022/"><img src="images/slide1.jpg" ></a>
 				</div>
 				<div class="item">
-					<img src="images/2.jpg">
+					<a href = "https://chemicalmbti.netlify.app/"><img src="images/slide2.jpg" ></a>
 				</div>
 				<div class="item">
-					<img src="images/3.jpg">
+					<a href = "https://ktestone.com/kapable.github.io/flowerBTI/"><img src="images/slide3.jpg" ></a>
 				</div>
 			</div>
 			<a class="left carousel-control" href="#myCarousel" data-slide="prev">
@@ -107,8 +107,8 @@
 						<div class ="game">
 							<span class ="gameImg">
 								<img src ="<%=list.get(i).getImgLink() %>" data-img="<%=list.get(i).getImgLink() %>" data-gif width="255" height="170">
-								<span style="font-family:'Noto Sans KR', sans-serif; color : black; font-size:18px; font-weight:bold; padding:10px 0px 20px 20px;"><%=list.get(i).getTitle() %></span>
 							</span>
+							<span style="font-family:'Noto Sans KR', sans-serif; color : black; font-size:18px; font-weight:bold; padding:10px 0px 20px 20px;"><%=list.get(i).getTitle() %></span>
 							
 						</div>
 						</a>
